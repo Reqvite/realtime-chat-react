@@ -11,7 +11,6 @@ export const ChatRoom = () => {
   const [messages] = useCollectionData(query, { idField: "id" });
 
   const [formValue, setFormValue] = useState("");
-  console.log(messages);
 
   const sendMessage = async (e) => {
     e.preventDefault();
