@@ -43,15 +43,9 @@ export const ChatRoom = () => {
   };
 
   return (
-    <Container
-      as="main"
-      py={5}
-      paddingBottom="80px"
-      maxW="1200px"
-      position="relative"
-    >
-      <Flex flexDirection="column" alignItems="flex-end">
-        <List spacing={3}>
+    <>
+      <Flex flexDirection="column" alignItems="center" py={5}>
+        <List spacing={3} w="90vw">
           {messages &&
             messages.map((msg) => (
               <ListItem key={msg.id}>
@@ -87,6 +81,6 @@ export const ChatRoom = () => {
           </InputRightAddon>
         </InputGroup>
       </FormControl>
-    </Container>
+    </>
   );
 };
