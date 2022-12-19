@@ -1,3 +1,4 @@
+import { Flex, Image, Spacer, Text } from "@chakra-ui/react";
 import { auth } from "Service/firebaseAuth";
 
 export const ChatMessage: React.FC<{ message: any }> = ({ message }) => {
@@ -5,9 +6,39 @@ export const ChatMessage: React.FC<{ message: any }> = ({ message }) => {
   const messageStatus = uid === auth.currentUser.uid ? "sent" : "received";
 
   return (
-    <div>
-      <img src={photoURL} alt={text} />
-      <p>{text}</p>
-    </div>
+    <Flex alignItems="center">
+      {messageStatus === "sent" && <Spacer />}
+      {messageStatus !== "received" ? (
+        <>
+          <Text maxW="50vh" p={5} background="#1663cf" borderRadius={10}>
+            {text}
+          </Text>
+          <Image
+            ml={2}
+            src={photoURL}
+            alt={text}
+            w="50px"
+            h="50px"
+            borderRadius="50%"
+            referrerPolicy="no-referrer"
+          />
+        </>
+      ) : (
+        <>
+          <Image
+            mr={2}
+            src={photoURL}
+            alt={text}
+            w="50px"
+            h="50px"
+            borderRadius="50%"
+            referrerPolicy="no-referrer"
+          />
+          <Text maxW="50vh" p={5} background="#1663cf" borderRadius={10}>
+            {text}
+          </Text>
+        </>
+      )}
+    </Flex>
   );
 };

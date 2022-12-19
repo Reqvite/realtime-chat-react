@@ -3,8 +3,11 @@ import { Suspense } from "react";
 import { Outlet } from "react-router-dom";
 import { AuthNav } from "Components/AuthNav/AuthNav";
 import { Footer } from "Components/Footer/Footer";
+import { useAuthState } from "react-firebase-hooks/auth";
+import { auth } from "Service/firebaseAuth";
 
-export const AppBar = () => {
+export const SharedLayout = () => {
+  const [user] = useAuthState(auth);
   return (
     <>
       <Box minH="calc(100vh - 51px)" color="white">
@@ -17,7 +20,7 @@ export const AppBar = () => {
           <Outlet />
         </Suspense>
       </Box>
-      <Footer />
+      {!user && <Footer />}
     </>
   );
 };
