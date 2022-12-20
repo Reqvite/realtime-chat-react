@@ -34,7 +34,7 @@ export const ChatMessage: React.FC<{ message: any }> = ({ message }) => {
             borderRadius="50%"
             referrerPolicy="no-referrer"
           />
-          <Text maxW="50vh" p={5} background="#1663cf" borderRadius={10}>
+          <Text maxW="50vh" p={5} background="#30d667" borderRadius={10}>
             {text}
           </Text>
         </>
