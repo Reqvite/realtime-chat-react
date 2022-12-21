@@ -2,9 +2,6 @@ import firebase from "firebase/compat/app";
 import "firebase/compat/auth";
 import "firebase/compat/firestore";
 
-import { useAuthState } from "react-firebase-hooks/auth";
-import { useCollectionData } from "react-firebase-hooks/firestore";
-
 firebase.initializeApp({
   apiKey: "AIzaSyB5ENPnfIoarsc4JF8nH7hKXujVqgv3X6Y",
   authDomain: "react-realtime-chat-7d57d.firebaseapp.com",

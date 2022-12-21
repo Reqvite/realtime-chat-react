@@ -10,17 +10,17 @@ export const ChatMessage: React.FC<{ message: any }> = ({ message }) => {
       {messageStatus === "sent" && <Spacer />}
       {messageStatus !== "received" ? (
         <>
-          <Text maxW="50vh" p={5} background="#1663cf" borderRadius={10}>
+          <Text maxW="75vw" p={5} background="#1663cf" borderRadius={10}>
             {text}
           </Text>
           <Image
+            referrerPolicy="no-referrer"
             ml={2}
             src={photoURL}
             alt={text}
             w="50px"
             h="50px"
             borderRadius="50%"
-            referrerPolicy="no-referrer"
           />
         </>
       ) : (
@@ -34,7 +34,7 @@ export const ChatMessage: React.FC<{ message: any }> = ({ message }) => {
             borderRadius="50%"
             referrerPolicy="no-referrer"
           />
-          <Text maxW="50vh" p={5} background="#30d667" borderRadius={10}>
+          <Text maxW="50vw" p={5} background="#30d667" borderRadius={10}>
             {text}
           </Text>
         </>
