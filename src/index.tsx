@@ -11,7 +11,7 @@ const root = ReactDOM.createRoot(
 root.render(
   <React.StrictMode>
     <ChakraProvider>
-      <BrowserRouter basename="/react-realtime-chat/">
+      <BrowserRouter>
         <App />
       </BrowserRouter>
     </ChakraProvider>
