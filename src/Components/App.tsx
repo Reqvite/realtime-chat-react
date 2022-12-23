@@ -11,8 +11,9 @@ import { Text } from "@chakra-ui/react";
 import { useAuthState } from "react-firebase-hooks/auth";
 import { auth } from "Service/firebaseAuth";
 
-function App() {
+const App: React.FC = () => {
   const [user, loading] = useAuthState(auth);
+  console.log(user);
 
   return loading ? (
     <Text>Loading</Text>
@@ -30,6 +31,6 @@ function App() {
       <Global styles={GlobalStyles} />
     </>
   );
-}
+};
 
 export default App;
