@@ -12,9 +12,7 @@ import { useAuthState } from "react-firebase-hooks/auth";
 import { auth } from "Service/firebaseAuth";
 
 function App() {
-  const [user, loading] = useAuthState(auth);
-
-  console.log(user);
+  const [loading] = useAuthState(auth);
 
   return loading ? (
     <Text>Loading</Text>

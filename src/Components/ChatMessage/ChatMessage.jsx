@@ -1,8 +1,7 @@
 import { Flex, Image, Spacer, Text } from "@chakra-ui/react";
 import { auth } from "Service/firebaseAuth";
 
-export const ChatMessage: React.FC<{ message: any }> = ({ message }) => {
-  const { text, uid, photoURL } = message;
+const ChatMessage = ({ text, uid, photoURL }) => {
   const messageStatus = uid === auth.currentUser.uid ? "sent" : "received";
 
   return (
@@ -42,3 +41,5 @@ export const ChatMessage: React.FC<{ message: any }> = ({ message }) => {
     </Flex>
   );
 };
+
+export default ChatMessage;

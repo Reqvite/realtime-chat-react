@@ -11,17 +11,16 @@ import { auth, firestore } from "Service/firebaseAuth";
 
 export const SendForm = ({ bottomRef }) => {
   const messagesRef = firestore.collection("messages");
-
   const [formValue, setFormValue] = useState("");
 
   const sendMessage = async (e) => {
     e.preventDefault();
 
+    const date = new Date().getTime();
     const { uid, photoURL } = auth.currentUser;
-
     if (formValue === "") return;
     await messagesRef.add({
-      id: firebase.firestore.FieldValue.serverTimestamp(),
+      id: date + Math.random(),
       text: formValue,
       createdAt: firebase.firestore.FieldValue.serverTimestamp(),
       uid,
@@ -34,7 +33,7 @@ export const SendForm = ({ bottomRef }) => {
   };
 
   const handleFilter = (e) => {
-    setFormValue(e.target.value);
+    setFormValue(e.target.value.trim());
   };
 
   return (
