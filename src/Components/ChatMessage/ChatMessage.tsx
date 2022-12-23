@@ -1,7 +1,13 @@
 import { Flex, Image, Spacer, Text } from "@chakra-ui/react";
 import { auth } from "Service/firebaseAuth";
 
-const ChatMessage = ({ text, uid, photoURL }) => {
+interface ChatMessageProps {
+  text: string;
+  uid: string;
+  photoURL: string;
+}
+
+const ChatMessage: React.FC<ChatMessageProps> = ({ text, uid, photoURL }) => {
   const messageStatus = uid === auth.currentUser.uid ? "sent" : "received";
 
   return (

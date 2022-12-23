@@ -6,7 +6,7 @@ import { Footer } from "Components/Footer/Footer";
 import { useAuthState } from "react-firebase-hooks/auth";
 import { auth } from "Service/firebaseAuth";
 
-export const SharedLayout = () => {
+export const SharedLayout: React.FC = () => {
   const [user] = useAuthState(auth);
   return (
     <>

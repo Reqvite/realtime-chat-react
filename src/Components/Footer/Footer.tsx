@@ -1,7 +1,7 @@
 import { ExternalLinkIcon } from "@chakra-ui/icons";
 import { Box, Flex, Link, Text } from "@chakra-ui/react";
 
-export const Footer = () => {
+export const Footer: React.FC = () => {
   return (
     <Box as="footer" bg="gray.700" w="100%" p={3} color="white">
       <Flex justifyContent="center">

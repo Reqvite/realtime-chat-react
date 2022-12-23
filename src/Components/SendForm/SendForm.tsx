@@ -9,11 +9,17 @@ import {
 import { useState } from "react";
 import { auth, firestore } from "Service/firebaseAuth";
 
-export const SendForm = ({ bottomRef }) => {
+interface SendFormProps {
+  bottomRef: React.MutableRefObject<HTMLDivElement>;
+}
+
+export const SendForm: React.FC<SendFormProps> = ({ bottomRef }) => {
   const messagesRef = firestore.collection("messages");
   const [formValue, setFormValue] = useState("");
 
-  const sendMessage = async (e) => {
+  const sendMessage = async (
+    e: React.FormEvent<HTMLDivElement>
+  ): Promise<void> => {
     e.preventDefault();
 
     const date = new Date().getTime();
@@ -28,11 +34,14 @@ export const SendForm = ({ bottomRef }) => {
     });
 
     bottomRef.current.scrollIntoView({ behavior: "smooth" });
-    e.target.reset();
+
+    const target = e.target as HTMLFormElement;
+
+    target.reset();
     setFormValue("");
   };
 
-  const handleFilter = (e) => {
+  const handleFilter = (e: React.ChangeEvent<HTMLInputElement>): void => {
     setFormValue(e.target.value.trim());
   };
 

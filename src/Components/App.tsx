@@ -13,13 +13,13 @@ import { auth } from "Service/firebaseAuth";
 
 const App: React.FC = () => {
   const [user, loading] = useAuthState(auth);
-  console.log(user);
 
   return loading ? (
     <Text>Loading</Text>
   ) : (
     <>
       <Routes>
+        : React.FC
         <Route path="/" element={<SharedLayout />}>
           <Route index element={<Home />} />
           <Route

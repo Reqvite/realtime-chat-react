@@ -4,8 +4,8 @@ import { SendForm } from "Components/SendForm/SendForm";
 
 import ChatList from "Components/ChatList/ChatList";
 
-export const ChatRoom = () => {
-  const bottom = useRef();
+export const ChatRoom: React.FC = () => {
+  const bottom = useRef() as React.MutableRefObject<HTMLDivElement>;
 
   useEffect(() => {
     bottom.current.scrollIntoView({ behavior: "smooth" });

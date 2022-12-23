@@ -1,6 +1,6 @@
 import { Box, Heading } from "@chakra-ui/react";
 
-const Home = () => {
+const Home: React.FC = () => {
   return (
     <Box
       as="main"
